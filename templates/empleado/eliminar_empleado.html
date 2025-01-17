@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Lista de Empleados{% endblock %}
+
+{% block extra_head %}
+
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/header.html' %}
+    <div class="grid-container">
+        <div class="grid-x">
+
+        <h1 class="cell">Eliminar Empleado: <strong>{{ empleado.full_name }}</strong></h1>
+        <form class="cell" method="POST"> {% csrf_token %}
+            <div class="callout secondary">
+                <h5>¿Estás seguro de eliminar el empleado?</h5>
+                <button class="button alert" type="submit">Confirmar</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

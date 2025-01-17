@@ -1,0 +1,24 @@
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+            <li><a href="{% url 'empleado_app:inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'empleado_app:lista_empleados' %}">Empleados</a></li>
+            <li><a href="{% url 'departamento_app:listar_departamento' %}">Departamentos</a></li>
+            <li><a href="{% url 'empleado_app:empleado_admin' %}">Administrar</a></li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li>
+                <input type="search" placeholder="Buscar empleado">
+            </li>
+            <li>
+                {% if request.resolver_match.url_name == 'empleado_admin' %}
+                    <li><a class="button" href="{% url 'empleado_app:empleado_crear' %}">Registrar Nuevo</a></li>
+                {% else %}
+                    <button type="button" class="button">Buscar</button>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</div>

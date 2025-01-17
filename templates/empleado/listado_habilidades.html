@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de empleados</title>
+</head>
+<body>
+    <form action="" method="GET">
+
+        <input type="text" id="kword" name="kword" placeholder="Ingrese nombre aquí">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if habilidades %}
+        {% for habilidad in habilidades %}
+            <ul>
+                <li>{{ habilidad.habilidad | title }}</li>
+            </ul>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

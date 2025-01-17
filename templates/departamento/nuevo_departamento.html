@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear departamento</title>
+</head>
+<body>
+    <h1>Crear departamento</h1>
+    
+
+    <form method="POST"> {% csrf_token %} 
+
+        <h3>Datos Empleado</h3>
+        <p> {{form.nombre}}</p>
+        <p> {{form.apellidos}}</p>
+
+        <h3>Datos Departamento</h3>
+        <p> {{form.departamento}}</p>
+        <p> {{form.short_name}}</p>
+        
+
+
+        <button type="submit">Crear</button>
+    </form>
+    
+</body>
+</html>

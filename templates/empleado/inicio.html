@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    {% include 'includes/header.html' %}
+
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+        <div class="orbit-wrapper">
+            <div class="orbit-controls">
+                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+            </div>
+            <ul class="orbit-container">
+                <li class="orbit-slide">
+                    <figure class="orbit-figure">
+                        <img class="orbit-image" src="{% static 'img/2.jpg' %}" alt="Space">
+                        <figcaption class="orbit-caption">Encapsulating</figcaption>
+                    </figure>
+                </li>
+                <li class="orbit-slide">
+                    <figure class="orbit-figure">
+                        <img class="orbit-image" src="{% static 'img/1.jpg' %}" alt="Space">
+                        <figcaption class="orbit-caption">Outta This World</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+        <nav class="orbit-bullets">
+            <button class="is-active" data-slide="0">
+                <span class="show-for-sr">First slide details.</span>
+                <span class="show-for-sr" data-slide-active-label>Current Slide</span>
+            </button>
+            <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+        </nav>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-x align-center">
+            <h1 class="cell large-8 text-center">Bienvenido al sistema de empleados</h1>
+            <div class="cell large-8">
+                <div class="callout large">
+                    <h5>Este es un gran llamado a la acción</h5>
+                    <p>Tiene un estilo visual fácil de sobrescribir y es apropiadamente sutil.</p>
+                    <a href="#" class="button">Es peligroso ir solo, toma esto.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .orbit-image {
+            width: 100%;
+            height: 500px; /* Ajusta la altura según tus necesidades */
+            object-fit: cover; /* Para mantener la proporción de la imagen */
+        }
+        .orbit-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .callout.large {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .grid-x.align-center {
+            margin-top: 40px;
+        }
+        h1.text-center {
+            text-align: center;
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+{% endblock %}

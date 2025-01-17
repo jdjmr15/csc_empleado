@@ -1,0 +1,19 @@
+<!--Crear un html5 que muestre una lista de colores-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<body>
+    <h1>Lista</h1>
+    <ul>
+        {% for l in  lista%}
+            <li>{{ l.titulo }}</li>
+            <ul><li>{{ l.subtitulo }}</li></ul>
+        {% endfor %}
+        
+    </ul>
+</body>
+</html>

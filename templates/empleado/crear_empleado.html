@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Lista de Empleados{% endblock %}
+
+{% block extra_head %}
+
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/header.html' %}
+    <div class="grid-container">
+        <div class="grid-x">
+            <h1 class="cell">Crear Empleado</h1>
+            <form class="cell" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                {{ form.as_p }}
+                <button class="button success" type="submit">Crear empleado</button>
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load custom_filters %}
+
+{% block title %}Lista de Empleados{% endblock %}
+
+{% block extra_head %}
+
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/header.html' %}
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center">
+            <div class="cell large-4 card" style="width: 300px;">
+                <div class="card-divider align-center">
+                   <strong>{{ empleado }}</strong> 
+                </div>
+                    <img src={% if foto_exists %}
+                    
+                        "{{ empleado.Foto.url }}"
+                    {% else %}
+                        "{% static 'img/user-default.jpg' %}"
+                    {% endif %}
+                    alt="{{ empleado.full_name }}" class="thumbnail">
+                <div class="card-section">
+                    <p>Departamento: {{ empleado.Departamento.name }} ({{ empleado.Departamento.short_name }})</p>
+                    <p>Posición: {{ empleado.get_professional_display }}</p>
+                    <p><span class="label">Habilidades:</span></p>
+                    <ul class=" menu simple">
+                        {% for skill in empleado.habilidad.all %}
+                            <li>{{ skill | title }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
